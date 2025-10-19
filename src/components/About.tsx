@@ -25,15 +25,15 @@ const About = () => {
 
           <Card className="p-8 md:p-12 shadow-lg hover-lift">
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I'm a final-year <strong>Computer Engineering</strong> student passionate about automation, 
-              cloud systems, and DevOps culture. I love building scalable systems and improving developer 
-              workflows through <strong>CI/CD pipelines</strong> and <strong>Infrastructure as Code</strong>.
+              I'm a <strong>Software Engineering</strong> student at the <strong>International Institute of Technology (IIT)</strong>, 
+              passionate about automation, cloud systems, and AIOps. I enjoy building scalable infrastructures and 
+              improving developer workflows using <strong>DevOps practices</strong> and modern technologies.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My expertise spans across containerization, cloud platforms, and modern DevOps tools. 
-              I thrive on solving complex infrastructure challenges and continuously learning about 
-              emerging technologies in the cloud-native ecosystem.
+              My expertise spans across cloud platforms, containerization, microservices architecture, and full-stack development. 
+              I thrive on solving complex infrastructure challenges and continuously learning about emerging technologies 
+              in the DevOps and AIOps ecosystem.
             </p>
 
             {/* Tech Stack Icons */}

@@ -27,19 +27,19 @@ const Experience = () => {
 
   const educationData = [
     {
-      title: "Computer Engineering Degree",
-      institution: "International Institute of Technology",
-      period: "2021 - 2025",
+      title: "Engineering Cycle — Software Engineering & Decision Support Systems",
+      institution: "International Institute of Technology (IIT)",
+      period: "2023 - Present",
       description:
-        "Final year student specializing in Cloud Computing and DevOps. Relevant coursework: Distributed Systems, Cloud Architecture, Network Security, Software Engineering.",
+        "Specializing in Software Engineering, DevOps, Cloud Computing, and AIOps. Focus on building scalable systems, automation, and modern development practices.",
       icon: GraduationCap,
     },
     {
-      title: "Bachelor in Computer Science",
-      institution: "ISIMS / ISET",
-      period: "2019 - 2021",
+      title: "Bachelor's Degree — Software Engineering & Information Systems",
+      institution: "International Institute of Technology (IIT)",
+      period: "2020 - 2023",
       description:
-        "Focused on fundamentals of computer science, programming, databases, and system administration. Graduated with honors.",
+        "Focused on fundamentals of software engineering, programming, databases, and system design. Strong foundation in computer science principles.",
       icon: GraduationCap,
     },
   ];

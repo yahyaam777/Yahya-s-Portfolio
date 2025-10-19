@@ -8,24 +8,34 @@ import { Badge } from "@/components/ui/badge";
 const Skills = () => {
   const skillsData = [
     {
-      category: "DevOps Tools",
-      skills: ["Docker", "Kubernetes", "Terraform", "Jenkins", "GitLab CI/CD", "Ansible"],
+      category: "Languages",
+      skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "C", "Dart"],
       color: "bg-blue-500/10 text-blue-700 border-blue-200",
     },
     {
-      category: "Cloud Platforms",
-      skills: ["AWS", "Azure", "Google Cloud"],
-      color: "bg-orange-500/10 text-orange-700 border-orange-200",
-    },
-    {
-      category: "Programming",
-      skills: ["Python", "C#", "Bash", "Flutter", "JavaScript", "TypeScript"],
+      category: "Frameworks",
+      skills: ["Spring Boot", "Express", "React", "Angular", "Node.js", ".NET"],
       color: "bg-green-500/10 text-green-700 border-green-200",
     },
     {
-      category: "OS & Infrastructure",
-      skills: ["Linux", "Networking", "Virtualization", "Monitoring", "Security"],
+      category: "DevOps Tools",
+      skills: ["Jenkins", "GitLab CI", "GitHub Actions", "Docker", "Kubernetes", "AWS EKS"],
+      color: "bg-orange-500/10 text-orange-700 border-orange-200",
+    },
+    {
+      category: "Cloud Platforms",
+      skills: ["AWS (EC2, ECR, Lambda, S3)", "Azure", "Docker Hub"],
       color: "bg-purple-500/10 text-purple-700 border-purple-200",
+    },
+    {
+      category: "Databases",
+      skills: ["MySQL", "SQL Server", "PostgreSQL"],
+      color: "bg-pink-500/10 text-pink-700 border-pink-200",
+    },
+    {
+      category: "Data Tools",
+      skills: ["SSIS", "Power BI", "Data Warehousing"],
+      color: "bg-indigo-500/10 text-indigo-700 border-indigo-200",
     },
   ];
 

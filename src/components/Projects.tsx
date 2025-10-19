@@ -10,52 +10,44 @@ import { Github, ExternalLink } from "lucide-react";
 const Projects = () => {
   const projectsData = [
     {
-      title: "CI/CD Pipeline Automation",
+      title: "AIOps Platform for Predictive Maintenance",
       description:
-        "Built a complete CI/CD workflow using GitLab CI/CD and Docker. Automated testing, building, and deployment processes for multiple microservices, reducing deployment time by 60%.",
-      techStack: ["GitLab CI/CD", "Docker", "Kubernetes", "Python"],
+        "Built ML-based monitoring dashboards on AWS for anomaly detection. Implemented predictive maintenance algorithms to identify system failures before they occur.",
+      techStack: ["AWS", "Python", "Machine Learning", "Monitoring"],
       githubUrl: "#", // Replace with actual GitHub link
       liveUrl: null,
     },
     {
-      title: "Infrastructure as Code Project",
+      title: "Microservices on AWS EKS",
       description:
-        "Deployed and managed AWS infrastructure automatically using Terraform. Created reusable modules for VPC, EC2, RDS, and S3, with state management in S3 backend.",
-      techStack: ["Terraform", "AWS", "Bash", "CloudFormation"],
+        "Designed and deployed microservices architecture using AWS EKS. Built complete CI/CD pipeline with Jenkins & GitLab for Spring Boot + Angular applications.",
+      techStack: ["AWS EKS", "Kubernetes", "Jenkins", "GitLab", "Spring Boot", "Angular"],
       githubUrl: "#",
       liveUrl: null,
     },
     {
-      title: "Monitoring Dashboard",
+      title: "Fishermen Management & Statistics App",
       description:
-        "Implemented real-time monitoring solution using Prometheus and Grafana. Created custom dashboards for infrastructure metrics, application performance, and alerting systems.",
-      techStack: ["Prometheus", "Grafana", "Docker", "Node Exporter"],
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      title: "Kubernetes Cluster Setup",
-      description:
-        "Set up production-grade Kubernetes cluster with high availability. Implemented auto-scaling, load balancing, and deployed multiple containerized applications with Helm charts.",
-      techStack: ["Kubernetes", "Helm", "Docker", "Nginx"],
+        "Flutter mobile application with real-time analytics and statistics. Integrated Syncfusion charts for data visualization and performance tracking.",
+      techStack: ["Flutter", "Dart", "Syncfusion", "Firebase"],
       githubUrl: "#",
       liveUrl: null,
     },
     {
-      title: "Automated Backup System",
+      title: "CRM and Lead Management System",
       description:
-        "Developed automated backup solution for databases and critical files using Python scripts. Implemented encryption and cloud storage integration with AWS S3.",
-      techStack: ["Python", "AWS S3", "Bash", "Cron"],
+        "Comprehensive CRM solution for client tracking with authentication. Built using Flutter for mobile interface and MongoDB for data storage.",
+      techStack: ["Flutter", "MongoDB", "Node.js", "Authentication"],
       githubUrl: "#",
       liveUrl: null,
     },
     {
-      title: "Microservices Architecture",
+      title: "Network Sniffing Application",
       description:
-        "Designed and deployed microservices-based application with Docker Compose and Kubernetes. Implemented service mesh, API gateway, and centralized logging.",
-      techStack: ["Docker", "Kubernetes", "Node.js", "MongoDB"],
+        "Real-time network packet analysis tool built with C# WinForms. Captures and analyzes network traffic with detailed protocol information.",
+      techStack: ["C#", "WinForms", ".NET", "Networking"],
       githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: null,
     },
   ];
 

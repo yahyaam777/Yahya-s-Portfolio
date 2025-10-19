@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 /* Navigation Component
  * Sticky header with navigation links
@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -16,6 +17,8 @@ const Navigation = () => {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Languages", href: "#languages" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -26,7 +29,25 @@ const Navigation = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
   }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -55,7 +76,7 @@ const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -69,6 +90,15 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="ml-2"
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,6 +129,22 @@ const Navigation = () => {
                   {link.name}
                 </a>
               ))}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleTheme}
+                className="justify-start"
+              >
+                {isDarkMode ? (
+                  <>
+                    <Sun className="h-5 w-5 mr-2" /> Light Mode
+                  </>
+                ) : (
+                  <>
+                    <Moon className="h-5 w-5 mr-2" /> Dark Mode
+                  </>
+                )}
+              </Button>
             </div>
           </div>
         )}

@@ -27,11 +27,11 @@ const Hero = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl text-muted-foreground mb-4">
-            DevOps & Cloud Enthusiast
+            DevOps & Cloud Enthusiast | Software Engineering Student
           </p>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Building scalable systems and automating workflows through modern DevOps practices
+            Building automated, scalable systems with DevOps and Cloud technologies
           </p>
 
           {/* CTA Buttons */}
