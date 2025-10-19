@@ -15,40 +15,37 @@ const Languages = () => {
   ];
 
   return (
-    <section id="languages" className="py-20 bg-muted/30">
-      <div className="container px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            <span className="gradient-text">Languages</span>
-          </h2>
+    <div>
+      <h2 className="text-3xl font-bold mb-2">
+        <span className="text-primary">Languages</span>
+      </h2>
+      <div className="h-1 w-12 bg-primary mb-8"></div>
 
-          <Card className="p-8">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 rounded-lg bg-primary/10">
-                <Globe className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold">Language Proficiency</h3>
-            </div>
-
-            <div className="space-y-6">
-              {languagesData.map((language, index) => (
-                <div
-                  key={language.name}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium text-lg">{language.name}</span>
-                    <span className="text-sm text-muted-foreground">{language.level}</span>
-                  </div>
-                  <Progress value={language.percentage} className="h-2" />
-                </div>
-              ))}
-            </div>
-          </Card>
+      <Card className="p-8 bg-gradient-card border-border">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="p-3 rounded-xl bg-primary/10">
+            <Globe className="h-6 w-6 text-primary" />
+          </div>
+          <h3 className="text-xl font-bold">Language Proficiency</h3>
         </div>
-      </div>
-    </section>
+
+        <div className="space-y-6">
+          {languagesData.map((language, index) => (
+            <div
+              key={language.name}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-medium">{language.name}</span>
+                <span className="text-sm text-muted-foreground">{language.level}</span>
+              </div>
+              <Progress value={language.percentage} className="h-2" />
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
   );
 };
 

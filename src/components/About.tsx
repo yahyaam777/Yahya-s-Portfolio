@@ -1,57 +1,69 @@
-import { Server, Cloud, Container, GitBranch, Terminal, Boxes } from "lucide-react";
+import { Code, Globe, Smartphone, Database } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 /* About Section Component
- * Introduction and tech stack overview
- * Modify: Update the description text and tech icons as needed
+ * Introduction and services overview
+ * Modify: Update the description text and services as needed
  */
 const About = () => {
-  const techStack = [
-    { icon: Container, name: "Docker", color: "text-blue-500" },
-    { icon: Cloud, name: "AWS", color: "text-orange-500" },
-    { icon: Boxes, name: "Kubernetes", color: "text-blue-600" },
-    { icon: GitBranch, name: "GitLab CI/CD", color: "text-orange-600" },
-    { icon: Terminal, name: "Linux", color: "text-green-600" },
-    { icon: Server, name: "Terraform", color: "text-purple-600" },
+  const services = [
+    {
+      icon: Code,
+      title: "DevOps Engineering",
+      description: "Building robust CI/CD pipelines and automating infrastructure deployment at a professional level.",
+    },
+    {
+      icon: Globe,
+      title: "Cloud Architecture",
+      description: "Designing and implementing scalable cloud solutions on AWS, Azure, and other platforms.",
+    },
+    {
+      icon: Smartphone,
+      title: "Full-Stack Development",
+      description: "Professional application development using Spring Boot, Flutter, React, and Angular frameworks.",
+    },
+    {
+      icon: Database,
+      title: "AIOps & Data Engineering",
+      description: "Design and optimization of data pipelines with ML-based monitoring and predictive maintenance.",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            About <span className="gradient-text">Me</span>
-          </h2>
+    <div>
+      <h2 className="text-3xl font-bold mb-6">
+        About Me <span className="text-primary">..</span>
+      </h2>
 
-          <Card className="p-8 md:p-12 shadow-lg hover-lift">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I'm a <strong>Software Engineering</strong> student at the <strong>International Institute of Technology (IIT)</strong>, 
-              passionate about automation, cloud systems, and AIOps. I enjoy building scalable infrastructures and 
-              improving developer workflows using <strong>DevOps practices</strong> and modern technologies.
-            </p>
+      <p className="text-muted-foreground leading-relaxed mb-8">
+        I'm a <strong className="text-foreground">Software Engineering</strong> student at the{" "}
+        <strong className="text-foreground">International Institute of Technology (IIT)</strong>, passionate about
+        automation, cloud systems, and AIOps. I enjoy building scalable infrastructures and improving developer
+        workflows using <strong className="text-foreground">DevOps practices</strong> and modern technologies.
+      </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My expertise spans across cloud platforms, containerization, microservices architecture, and full-stack development. 
-              I thrive on solving complex infrastructure challenges and continuously learning about emerging technologies 
-              in the DevOps and AIOps ecosystem.
-            </p>
+      <h3 className="text-2xl font-bold mb-6 mt-12">
+        What I Can Do <span className="text-primary">..</span>
+      </h3>
 
-            {/* Tech Stack Icons */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-10">
-              {techStack.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <tech.icon className={`h-10 w-10 ${tech.color}`} />
-                  <span className="text-sm font-medium text-center">{tech.name}</span>
-                </div>
-              ))}
+      <div className="grid sm:grid-cols-2 gap-6">
+        {services.map((service, index) => (
+          <Card
+            key={service.title}
+            className="p-6 hover-lift bg-gradient-card border-border"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="mb-4">
+              <div className="inline-flex p-3 rounded-xl bg-primary/10">
+                <service.icon className="h-8 w-8 text-primary" />
+              </div>
             </div>
+            <h4 className="text-xl font-bold mb-3">{service.title}</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
           </Card>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

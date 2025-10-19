@@ -1,34 +1,20 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
-import Certifications from "@/components/Certifications";
-import Languages from "@/components/Languages";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
+import TabNavigation from "@/components/TabNavigation";
 import BackToTop from "@/components/BackToTop";
 
 /* Main Portfolio Page
- * This is the main page that combines all sections
+ * Sidebar layout with tab-based navigation
  * All components are modular and can be edited independently
  */
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Certifications />
-        <Languages />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 lg:py-12">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <Sidebar />
+          <TabNavigation />
+        </div>
+      </div>
       <BackToTop />
     </div>
   );

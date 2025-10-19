@@ -45,23 +45,25 @@ const Experience = () => {
   ];
 
   const TimelineItem = ({ item, index }: { item: any; index: number }) => (
-    <div className="relative pl-8 pb-12 last:pb-0 animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+    <div className="relative pl-8 pb-8 last:pb-0 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
       {/* Timeline line */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-primary" />
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
       
       {/* Timeline dot */}
-      <div className="absolute left-0 top-2 w-4 h-4 -ml-2 rounded-full bg-primary shadow-glow" />
+      <div className="absolute left-0 top-2 w-3 h-3 -ml-1.5 rounded-full bg-primary" />
 
-      <Card className="p-6 hover-lift ml-4">
-        <div className="flex items-start gap-4">
-          <div className="p-3 rounded-lg bg-primary/10">
-            <item.icon className="h-6 w-6 text-primary" />
+      <Card className="p-5 hover-lift ml-4 bg-gradient-card border-border">
+        <div className="flex items-start gap-3">
+          <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+            <item.icon className="h-5 w-5 text-primary" />
           </div>
-          <div className="flex-1">
-            <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-            <p className="text-primary font-medium mb-2">{item.company || item.institution}</p>
-            <p className="text-sm text-muted-foreground mb-3">{item.period}</p>
-            <p className="text-muted-foreground">{item.description}</p>
+          <div className="flex-1 min-w-0">
+            <h4 className="text-lg font-bold mb-1">{item.title}</h4>
+            <a href="#" className="text-primary font-medium text-sm hover:underline mb-1 inline-block">
+              {item.company || item.institution}
+            </a>
+            <p className="text-xs text-muted-foreground mb-2">{item.period}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
           </div>
         </div>
       </Card>
@@ -69,39 +71,34 @@ const Experience = () => {
   );
 
   return (
-    <section id="experience" className="py-20">
-      <div className="container px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Experience & <span className="gradient-text">Education</span>
-          </h2>
+    <div>
+      <h2 className="text-3xl font-bold mb-2">
+        Experience & <span className="text-primary">Education</span>
+      </h2>
+      <div className="h-1 w-12 bg-primary mb-8"></div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Experience Timeline */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-                <Briefcase className="h-6 w-6 text-primary" />
-                Experience
-              </h3>
-              {experienceData.map((item, index) => (
-                <TimelineItem key={item.title} item={item} index={index} />
-              ))}
-            </div>
-
-            {/* Education Timeline */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-primary" />
-                Education
-              </h3>
-              {educationData.map((item, index) => (
-                <TimelineItem key={item.title} item={item} index={index} />
-              ))}
-            </div>
-          </div>
-        </div>
+      {/* Education Timeline */}
+      <div className="mb-12">
+        <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+          <GraduationCap className="h-5 w-5 text-primary" />
+          Education
+        </h3>
+        {educationData.map((item, index) => (
+          <TimelineItem key={item.title} item={item} index={index} />
+        ))}
       </div>
-    </section>
+
+      {/* Experience Timeline */}
+      <div>
+        <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+          <Briefcase className="h-5 w-5 text-primary" />
+          Experience
+        </h3>
+        {experienceData.map((item, index) => (
+          <TimelineItem key={item.title} item={item} index={index} />
+        ))}
+      </div>
+    </div>
   );
 };
 

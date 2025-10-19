@@ -52,60 +52,56 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
+    <div>
+      <h2 className="text-3xl font-bold mb-6">
+        Featured <span className="text-primary">Projects</span>
+      </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projectsData.map((project, index) => (
-              <Card
-                key={project.title}
-                className="p-6 flex flex-col hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
+      <div className="grid sm:grid-cols-2 gap-6">
+        {projectsData.map((project, index) => (
+          <Card
+            key={project.title}
+            className="p-6 flex flex-col hover-lift bg-gradient-card border-border"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <h3 className="text-lg font-bold mb-3">{project.title}</h3>
+            <p className="text-muted-foreground text-sm mb-4 flex-grow">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.techStack.map((tech) => (
+                <Badge key={tech} variant="secondary" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+
+            <div className="flex gap-2 mt-auto">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1"
+                onClick={() => window.open(project.githubUrl, "_blank")}
               >
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 flex-grow">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex gap-2 mt-auto">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1"
-                    onClick={() => window.open(project.githubUrl, "_blank")}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
-                  {project.liveUrl && (
-                    <Button
-                      size="sm"
-                      className="flex-1 bg-gradient-primary"
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live
-                    </Button>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+                <Github className="mr-2 h-4 w-4" />
+                Code
+              </Button>
+              {project.liveUrl && (
+                <Button
+                  size="sm"
+                  className="flex-1 bg-primary text-background hover:bg-primary/90"
+                  onClick={() => window.open(project.liveUrl, "_blank")}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Live
+                </Button>
+              )}
+            </div>
+          </Card>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
