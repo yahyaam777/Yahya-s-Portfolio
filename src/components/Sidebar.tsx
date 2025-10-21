@@ -17,8 +17,8 @@ const Sidebar = ({ photoSrc }: { photoSrc?: string }) => {
     {
       icon: Phone,
       label: "PHONE NUMBER",
-      value: "+216 29 033 035", // Replace with your phone
-      link: "tel:+216 29 033 035",
+      value: "+216 29 0330 035", // Replace with your phone
+      link: "tel:+216 29 0330 035",
     },
     {
       icon: MapPin,
@@ -44,8 +44,6 @@ const Sidebar = ({ photoSrc }: { photoSrc?: string }) => {
               src={photoSrc ?? "/placeholder.svg"}
               alt="Yahya Amami"
               className="w-full h-full object-cover"
-              // Shift the image content down so the top of the head isn't cropped.
-              style={{ objectPosition: "center 25%" }}
             />
           </div>
         </div>
