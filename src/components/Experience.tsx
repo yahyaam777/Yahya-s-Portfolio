@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Briefcase, GraduationCap } from "lucide-react";
+import type { ComponentType } from "react";
 
 /* Experience & Education Section Component
  * Timeline-style display of work experience and education
@@ -8,19 +9,43 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const Experience = () => {
   const experienceData = [
     {
-      title: "DevOps Intern",
-      company: "Aziro Technologies",
-      period: "Summer 2024 - Present",
+      title: "AIOps Platform for Predictive Maintenance",
+      company: "ADHOC by Qim INFO",
+      period: "July 2025 - August 2025",
       description:
-        "Working on CI/CD pipeline optimization, container orchestration with Kubernetes, and cloud infrastructure management on AWS. Implemented automated deployment workflows.",
+        "Built an AIOps platform (LGMT stack) with ML models for anomaly detection and predictive maintenance. Created Grafana dashboards for real-time monitoring and deployed on AWS (EC2, S3, CloudWatch, Lambda) with Docker and CI/CD.",
       icon: Briefcase,
     },
     {
-      title: "Cloud Engineering Intern",
-      company: "Capgemini",
-      period: "Summer 2023",
+      title: "DevOps Project — Microservices on AWS EKS",
+      company: "International Institute of Technology",
+      period: "Feb. 2025 - May 2025",
       description:
-        "Assisted in migrating legacy applications to AWS cloud. Worked with EC2, S3, RDS, and Lambda services. Gained hands-on experience with Terraform and CloudFormation.",
+        "Deployed microservices using Spring Boot and Angular, containerized with Docker and orchestrated on AWS EKS. Implemented CI/CD pipelines with Jenkins and GitLab CI and provisioned EC2 instances with Kubernetes manifests.",
+      icon: Briefcase,
+    },
+    {
+      title: "Fishermen Management & Statistics App",
+      company: "WEDTECT",
+      period: "June 2024 - August 2024",
+      description:
+        "Developed a fishermen management system with real-time statistics (Syncfusion Charts) for catch tracking, notifications, and automatic authorization number generation. Built REST APIs and frontend modules.",
+      icon: Briefcase,
+    },
+    {
+      title: "CRM and Lead Management System",
+      company: "LEZART Digital",
+      period: "Feb. 2023 - June 2023",
+      description:
+        "Developed user and client management modules with secure authentication, lead tracking, opportunity management, and contributed to DevOps practices (Git, CI/CD, staging deployments).",
+      icon: Briefcase,
+    },
+    {
+      title: "Network Sniffing Application",
+      company: "PRIMATEC Engineering",
+      period: "July 2022 - August 2022",
+      description:
+        "Designed and implemented a packet sniffing and analysis application for real-time network monitoring, with modules for packet capture, filtering, protocol analysis, and visualization.",
       icon: Briefcase,
     },
   ];
@@ -44,7 +69,17 @@ const Experience = () => {
     },
   ];
 
-  const TimelineItem = ({ item, index }: { item: any; index: number }) => (
+  type TimelineEntry = {
+    title: string;
+    company?: string;
+    institution?: string;
+    period: string;
+    description: string;
+    // SVG/react icon components typically accept a `className` prop for sizing/colors
+    icon: ComponentType<{ className?: string }>;
+  };
+
+  const TimelineItem = ({ item, index }: { item: TimelineEntry; index: number }) => (
     <div className="relative pl-8 pb-8 last:pb-0 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
       {/* Timeline line */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />

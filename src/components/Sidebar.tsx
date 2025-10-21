@@ -6,31 +6,31 @@ import { Separator } from "@/components/ui/separator";
  * Fixed sidebar with profile information
  * Modify: Update personal info, avatar, and social links
  */
-const Sidebar = () => {
+const Sidebar = ({ photoSrc }: { photoSrc?: string }) => {
   const contactInfo = [
     {
       icon: Mail,
       label: "EMAIL",
-      value: "yahya.amami@example.com", // Replace with your email
-      link: "mailto:yahya.amami@example.com",
+      value: "yahyaamami33@gmail.com", // Replace with your email
+      link: "mailto:yahyaamami33@gmail.com ",
     },
     {
       icon: Phone,
       label: "PHONE NUMBER",
-      value: "+216 XX XXX XXX", // Replace with your phone
-      link: "tel:+216XXXXXXXX",
+      value: "+216 29 033 035", // Replace with your phone
+      link: "tel:+216 29 033 035",
     },
     {
       icon: MapPin,
       label: "LOCATION",
-      value: "Sfax, Tunisia", // Replace with your location
+      value: "Sfax , Tunisia", // Replace with your location
       link: null,
     },
   ];
 
   const socialLinks = [
-    { icon: Linkedin, url: "https://linkedin.com/in/yahya-amami", label: "LinkedIn" },
-    { icon: Github, url: "https://github.com/yahya-amami", label: "GitHub" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/yahya-amami-8168711a3/", label: "LinkedIn" },
+    { icon: Github, url: "https://github.com/yahyaam777", label: "GitHub" },
   ];
 
   return (
@@ -38,9 +38,15 @@ const Sidebar = () => {
       <Card className="p-8 sticky top-8">
         {/* Profile Image */}
         <div className="mb-6">
-          <div className="w-48 h-48 mx-auto rounded-3xl bg-gradient-primary flex items-center justify-center text-6xl font-bold text-background overflow-hidden">
-            {/* Replace with actual image: <img src="your-photo.jpg" alt="Yahya Amami" className="w-full h-full object-cover" /> */}
-            YA
+          <div className="w-48 h-48 mx-auto rounded-3xl bg-gradient-primary overflow-hidden">
+            {/* Put your photo in `public/` and pass the filename via the `photoSrc` prop, e.g. `/my-photo.jpg` */}
+            <img
+              src={photoSrc ?? "/placeholder.svg"}
+              alt="Yahya Amami"
+              className="w-full h-full object-cover"
+              // Shift the image content down so the top of the head isn't cropped.
+              style={{ objectPosition: "center 25%" }}
+            />
           </div>
         </div>
 

@@ -43,19 +43,19 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:yahya.amami@example.com", // Replace with your email
+      url: "mailto:yahyaamami33@example.com", // Replace with your email
       color: "hover:text-blue-500",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yahya-amami", // Replace with your LinkedIn
+      url: "https://www.linkedin.com/in/yahya-amami-8168711a3/", // Replace with your LinkedIn
       color: "hover:text-blue-600",
     },
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/yahya-amami", // Replace with your GitHub
+      url: "https://github.com/yahyaam777", // Replace with your GitHub
       color: "hover:text-gray-800",
     },
   ];
