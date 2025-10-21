@@ -41,7 +41,7 @@ const Sidebar = ({ photoSrc }: { photoSrc?: string }) => {
           <div className="w-48 h-48 mx-auto rounded-3xl bg-gradient-primary overflow-hidden">
             {/* Put your photo in `public/` and pass the filename via the `photoSrc` prop, e.g. `/my-photo.jpg` */}
             <img
-              src={photoSrc ?? "/Yahyas-Portfolio/placeholder.svg"}
+              src={photoSrc ?? "/yahyas-digital-desk/placeholder.svg"}
               alt="Yahya Amami"
               className="w-full h-full object-cover"
               // Shift the image content down so the top of the head isn't cropped.
