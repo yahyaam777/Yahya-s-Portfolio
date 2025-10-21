@@ -5,12 +5,15 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/yahyas-digital-desk/' : '/',
+  base: '/yahyas-digital-desk/',
   server: {
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger()
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -20,10 +23,19 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     assetsDir: "assets",
     emptyOutDir: true,
+    sourcemap: false,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        'gh-pages': path.resolve(__dirname, 'public/gh-pages.html')
+      output: {
+        manualChunks: undefined,
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name || '';
+          if (name.endsWith('.png') || name.endsWith('.svg') || name.endsWith('.ico')) {
+            return '[name].[ext]';
+          }
+          return 'assets/[name].[hash].[ext]';
+        },
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
       }
     }
   }
