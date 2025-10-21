@@ -33,7 +33,9 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          cp dist/gh-pages.html dist/404.html
         env:
           CI: false
 

@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/yahyas-digital-desk/",
+  base: mode === 'production' ? '/yahyas-digital-desk/' : '/',
   server: {
     host: "::",
     port: 8080,
@@ -21,8 +21,9 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
     emptyOutDir: true,
     rollupOptions: {
-      output: {
-        manualChunks: undefined
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        'gh-pages': path.resolve(__dirname, 'public/gh-pages.html')
       }
     }
   }
