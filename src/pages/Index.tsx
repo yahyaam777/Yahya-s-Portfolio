@@ -12,7 +12,7 @@ const Index = () => {
       <div className="container mx-auto px-4 py-8 lg:py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Using the photo you added to `public/` as `yahya.png` */}
-          <Sidebar photoSrc="/yahyas-digital-desk/yahya.png" />
+          <Sidebar photoSrc="/Yahyas-Portfolio/yahya.png" />
           <TabNavigation />
         </div>
       </div>
