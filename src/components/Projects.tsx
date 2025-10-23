@@ -30,7 +30,7 @@ const Projects = () => {
       description:
         "Flutter mobile application with real-time analytics and statistics. Integrated Syncfusion charts for data visualization and performance tracking.",
       techStack: ["Flutter", "Dart", "Syncfusion", "Firebase"],
-      demoUrl: "YOUR_YOUTUBE_LINK_HERE", // Replace with your actual YouTube demo link
+      demoUrl: "https://youtube.com/shorts/tAoYCfDVbrM", // Replace with your actual YouTube demo link
       githubUrl: null,
       liveUrl: null,
     },
