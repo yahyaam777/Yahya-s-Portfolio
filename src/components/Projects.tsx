@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, YoutubeIcon } from "lucide-react";
 
 /* Projects Section Component
  * Showcases portfolio projects
@@ -22,7 +22,7 @@ const Projects = () => {
       description:
         "Designed and deployed microservices architecture using AWS EKS. Built complete CI/CD pipeline with Jenkins & GitLab for Spring Boot + Angular applications.",
       techStack: ["AWS EKS", "Kubernetes", "Jenkins", "GitLab", "Spring Boot", "Angular"],
-      githubUrl: "#",
+      githubUrl: "https://gitlab.com/pfa8582418",
       liveUrl: null,
     },
     {
@@ -30,7 +30,8 @@ const Projects = () => {
       description:
         "Flutter mobile application with real-time analytics and statistics. Integrated Syncfusion charts for data visualization and performance tracking.",
       techStack: ["Flutter", "Dart", "Syncfusion", "Firebase"],
-      githubUrl: "#",
+      demoUrl: "YOUR_YOUTUBE_LINK_HERE", // Replace with your actual YouTube demo link
+      githubUrl: null,
       liveUrl: null,
     },
     {
@@ -78,15 +79,27 @@ const Projects = () => {
             </div>
 
             <div className="flex gap-2 mt-auto">
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1"
-                onClick={() => window.open(project.githubUrl, "_blank")}
-              >
-                <Github className="mr-2 h-4 w-4" />
-                Code
-              </Button>
+              {project.githubUrl && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => window.open(project.githubUrl, "_blank")}
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  Code
+                </Button>
+              )}
+              {project.demoUrl && (
+                <Button
+                  size="sm"
+                  className="flex-1 bg-red-600 text-white hover:bg-red-700"
+                  onClick={() => window.open(project.demoUrl, "_blank")}
+                >
+                  <YoutubeIcon className="mr-2 h-4 w-4" />
+                  Demo
+                </Button>
+              )}
               {project.liveUrl && (
                 <Button
                   size="sm"
